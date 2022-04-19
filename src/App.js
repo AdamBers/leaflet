@@ -1,9 +1,10 @@
+import React, { useState } from 'react';
 import { MapContainer, TileLayer } from 'react-leaflet'
-import { useState } from 'react';
 import Routing from './Routing';
 import './App.css';
 
 function App() {
+  const [active, setActive] = useState(0)
   const [data, setData] = useState([
     {
       id: 1,
@@ -33,6 +34,8 @@ function App() {
       toLgt: 12.5
     }
   ])
+
+  console.log(data[0])
 
   const places = ([
     {
@@ -71,6 +74,7 @@ function App() {
 
   const handleClick = (id) => {
     setCurrentDirection(data[id - 1])
+    setActive(id)
   }
   return (
     <div className="App">
@@ -86,18 +90,16 @@ function App() {
           <tbody>
             {data.map((item) => {
               return (
-                <tr key={item.id} onClick={() => handleClick(item.id)}>
+                <tr key={item.id} onClick={() => handleClick(item.id)} className={active === item.id ? "active" : ""}>
                   <td>{item.id}</td>
                   <td>
-                    <select>
-                      <option selected value={item.from}>{item.from}</option>
-                      {places.map((place) => <option value={place.city}>{place.city}</option>)}
+                    <select defaultValue={item.from}>
+                      {places.map((place, index) => <option key={index} value={place.city}>{place.city}</option>)}
                     </select>
                   </td>
                   <td>
-                    <select>
-                      <option selected value={item.to}>{item.to}</option>
-                      {places.map((place) => <option value={place.city}>{place.city}</option>)}
+                    <select defaultValue={item.to}>
+                      {places.map((place, index) => <option  key={index} value={place.city}>{place.city}</option>)}
                     </select>
                   </td>
                 </tr>
