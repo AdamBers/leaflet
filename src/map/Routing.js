@@ -9,7 +9,7 @@ function Routing({ direction }) {
     useEffect(() => {
         if (!map) return;
         const routingControl = L.Routing.control({
-            waypoints: [L.latLng(direction.fromLtd, direction.fromLgt), L.latLng(direction.toLtd, direction.toLgt)],
+            waypoints: [L.latLng(direction.from.Ltd, direction.from.Lgt), L.latLng(direction.to.Ltd, direction.to.Lgt)],
             routeWhileDragging: true
         }).addTo(map);
         return () => map.removeControl(routingControl);
