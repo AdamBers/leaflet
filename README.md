@@ -1,3 +1,5 @@
+![Header](https://github.com/AdamBers/leaflet/blob/310bf3f80e84b8aecfd6f8c5129c74a2ea4d4220/public/Leaflet.jpg)  
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
