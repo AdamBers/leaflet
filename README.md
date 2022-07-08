@@ -1,4 +1,4 @@
-![Header](https://github.com/AdamBers/leaflet/blob/6dece5356611b6daf7e0d72a61c7713a985d8130/public/map.jpg)  
+![Header](https://github.com/AdamBers/leaflet/blob/5ee7fc2ac2a7bbaebc8fed72177b10715ebd94fe/public/map.jpg)  
 
 # Getting Started with Create React App
 
